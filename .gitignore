@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 public/projects
-public/renders
+
 
 
 # Editor directories and files
