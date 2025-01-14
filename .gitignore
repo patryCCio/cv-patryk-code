@@ -11,7 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
-public
+public/projects
+public/renders
 
 
 # Editor directories and files
