@@ -1,0 +1,522 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+  background-color: #333;
+  font-family: Roboto, serif;
+  max-width: 100vw;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+#loading {
+  background-color: #1c6d3a;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+}
+
+#loading .loading-p {
+  color: #72e69d;
+  font-size: 350px;
+  font-weight: bold;
+  font-family: "Saira Condensed";
+  letter-spacing: 2px;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loading .text {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  position: fixed;
+  top: 23%;
+  left: 50%;
+  letter-spacing: 10px;
+  transform: translate(-50%, -50%);
+}
+
+#loading .progress {
+  width: 90%;
+  height: 5px;
+  border-radius: 12px;
+  /* overflow: hidden; */
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+}
+
+#loading .progress-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: 0.3s;
+  background-color: #32bb64;
+  border-radius: 12px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align {
+  align-items: center;
+}
+
+.gap {
+  gap: 300px;
+}
+
+.section-title {
+  position: absolute;
+
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 6px;
+  transform: translate(-100%, -50%);
+  font-family: "Roboto", sans-serif;
+  z-index: 1000;
+}
+
+.portfolio-wrapper {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle at 35% 20%,
+    #3aa160 0%,
+    #0d4421 35%,
+    rgba(10, 63, 29, 1) 95%
+  );
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+  position: relative;
+  z-index: 1000;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-wrapper .portfolio-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  gap: 30px;
+}
+
+.portfolio-wrapper .portfolio-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  padding: 12px 0;
+  width: 100%;
+
+  max-width: 800px;
+}
+#p-content {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  text-align: justify;
+  padding-top: 10px;
+  font-weight: 300;
+}
+
+#p-title {
+  color: #3aa160;
+  font-family: "Saira Condensed";
+  font-size: 4rem;
+  padding: 30px 0 10px 0;
+  text-align: center;
+}
+
+.portfolio-wrapper .portfolio-content.active {
+  animation: scale 0.5s ease-in-out;
+}
+
+.img-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transform: scale(0);
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 2000;
+  padding: 20px 40px;
+  transition: 0.3s;
+}
+
+.img-show-in {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%; /* Wysokość wypełnia okienko */
+}
+
+.img-show-in h2 {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.img-portfolio-block {
+  max-width: 100%;
+  max-height: calc(100% - 120px);
+  margin: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.portfolio-wrapper .arrow {
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.welcome {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  z-index: 1000;
+}
+
+.welcome-text {
+  font-family: "Saira Condensed";
+  color: white;
+  font-weight: bold;
+  font-size: 6rem;
+  transform: translateX(-100vw);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-text.active {
+  transform: translateX(0);
+}
+
+.welcome-text:nth-child(1) {
+  transition: 0.3s 0s;
+}
+.welcome-text:nth-child(2) {
+  transition: 0.3s 0.15s;
+}
+.welcome-text:nth-child(3) {
+  transition: 0.3s 0.3s;
+}
+.welcome-text:nth-child(4) {
+  transition: 0.3s 0.45s;
+}
+.welcome-text:nth-child(5) {
+  transition: 0.3s 0.6s;
+}
+.welcome-text:nth-child(7) {
+  transition: 0.3s 0.75s;
+}
+.welcome-text:nth-child(8) {
+  transition: 0.3s 0.9s;
+}
+.welcome-text:nth-child(9) {
+  transition: 0.3s 1.05s;
+}
+.welcome-text:nth-child(10) {
+  transition: 0.3s 1.2s;
+}
+.welcome-text:nth-child(11) {
+  transition: 0.3s 1.35s;
+}
+.welcome-text:nth-child(12) {
+  transition: 0.3s 1.5s;
+}
+
+.portfolio-wrapper .arrow:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #333;
+}
+
+.portfolio-wrapper .portfolio-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 0;
+}
+
+.portfolio-wrapper .portfolio-info .portfolio-info-split {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.portfolio-info-split p {
+  color: white;
+  font-family: "Saira Condensed";
+  font-size: 2rem;
+}
+
+.img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.img-h {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#img-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-info-split .progress {
+  width: 100%;
+  max-width: 400px;
+  height: 6px;
+  border-radius: 8px;
+  background-color: gray;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-info-split .progress .progress-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #32bb64;
+  transition: 0.3s;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.primary {
+  color: #32bb64;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.fixed-normalize {
+  top: 0;
+  left: 0;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.layer-100 {
+  z-index: 100;
+}
+
+.layer-101 {
+  z-index: 101;
+}
+
+.layer-102 {
+  z-index: 102;
+}
+
+.button-1 {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 7px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.button-1:hover,
+.button-1.active {
+  background-color: white;
+  color: black;
+}
+
+#button-1 {
+  top: 20px;
+  right: 20px;
+  z-index: 1901;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.text-color-1 {
+  color: white;
+}
+
+.text-color-2 {
+  color: lightgray;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+}
+
+.bg-color-1 {
+  background-color: white;
+}
+
+.bg-color-2 {
+  background-color: lightgray;
+}
+
+#video-main,
+#image-sequence {
+  z-index: 0;
+}
+
+#video-main.active,
+#image-sequence.active {
+  z-index: 10;
+}
+
+#ab-title {
+  color: #c2c4c2;
+  font-size: 6rem;
+  top: 50%;
+}
+
+#kn-title {
+  color: white;
+  font-size: 6rem;
+  top: 50%;
+}
+
+#portfolio-title {
+  color: white;
+  font-size: 6rem;
+  top: 50%;
+}
+
+#contact-title {
+  color: white;
+  font-size: 6rem;
+  top: 50%;
+}
+
+.contact-wrapper {
+  background-color: #041b0d;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+  position: relative;
+  z-index: 1000;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  #loading .loading-p {
+    font-size: 700px;
+  }
+
+  #loading .text {
+    font-size: 50px;
+  }
+
+  #ab-title {
+    font-size: 12rem;
+  }
+
+  #kn-title {
+    font-size: 12rem;
+  }
+
+  #portfolio-title {
+    font-size: 12rem;
+  }
+
+  #contact-title {
+    font-size: 12rem;
+  }
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrix 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/mobile.css" />
+    <link rel="stylesheet" href="./styles/defined.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <video
+        autoplay="true"
+        class="fixed fixed-normalize full-screen videos"
+        id="video-threed"
+        muted="true"
+        loop="true"
+        preload="auto"
+      ></video>
+      <div
+        id="slider"
+        class="fixed fixed-normalize full-screen layer-101"
+      ></div>
+
+      <div class="img-show" id="img-show">
+        <div class="img-show-in">
+          <h2 id="cancel-img">X</h2>
+          <img class="img-portfolio-block" id="img-portfolio" />
+        </div>
+      </div>
+
+      <div class="img-show" id="img-show-2">
+        <div class="img-show-in">
+          <h2 id="cancel-img-2">X</h2>
+          <img class="img-portfolio-block" />
+        </div>
+      </div>
+
+      <div
+        id="loading"
+        class="fixed fixed-normalize full-screen"
+        style="z-index: 2000"
+      >
+        <p class="loading-p">0</p>
+        <p class="text">LOADING</p>
+        <div class="progress">
+          <div class="progress-in"></div>
+        </div>
+      </div>
+
+      <div class="holding-info-group"></div>
+      <button class="fixed button-1 layer-101" id="button-1">CV</button>
+
+      <section data-name="Główna" class="section group-0 main layer-102">
+        <div class="welcome">
+          <span class="welcome-text">H</span>
+          <span class="welcome-text">E</span>
+          <span class="welcome-text">L</span>
+          <span class="welcome-text">L</span>
+          <span class="welcome-text">O</span>
+          <span class="welcome-text">&nbsp;</span>
+          <span class="welcome-text">W</span>
+          <span class="welcome-text">O</span>
+          <span class="welcome-text">R</span>
+          <span class="welcome-text">L</span>
+          <span class="welcome-text">D</span>
+          <span class="welcome-text">!</span>
+        </div>
+
+        <div class="scroll-down">
+          <span class="line bg-color-1"></span>
+          <span class="bold"> SCROLL DOWN </span>
+          <span class="arrow">V</span>
+        </div>
+      </section>
+
+      <section data-name="O mnie" class="section group-1 sequence-1">
+        <h2 class="section-title" id="ab-title">O mnie</h2>
+      </section>
+      <section data-name="O mnie" class="section group-1 about layer-102">
+        <div class="box" id="ab-t1">
+          <p class="title">Skąd się to wzięło?</p>
+          <p class="content">
+            Witaj, nazywam się
+            <span class="bold primary">Patryk Szczerbiński</span>! Moje
+            zainteresowanie programowaniem zapoczątkowało się już w okresie
+            technikum. Od tamtej pory kontynuuję swoją edukację na studiach
+            informatycznych, gdzie zdobywam solidne podstawy i rozwijam swoje
+            umiejętności programistyczne. Obecnie jestem studentem IV roku
+            informatyki, a oprócz studiów, pragnę poszerzać swoją wiedzę i
+            zdobywać praktyczne doświadczenie jako programista
+            <span class="bold primary">front-end</span> lub
+            <span class="bold primary">full-stack</span>.
+          </p>
+        </div>
+
+        <div class="box" id="ab-t2">
+          <p class="title">Więcej o mnie</p>
+          <p class="content">
+            Jestem osobą, która przykłada dużą wagę do szczegółów i dbałości o
+            jakość swojego kodu. Wierzę, że to właśnie w trudnych wyzwaniach
+            najbardziej się uczymy, dlatego nie boję się podejmować nowych,
+            wymagających projektów. Fascynuje mnie proces tworzenia
+            interaktywnych interfejsów użytkownika i skutecznego rozwiązywania
+            problemów związanych z programowaniem.
+          </p>
+        </div>
+      </section>
+      <section data-name="Umiejętności" class="section group-2 dd">
+        <h2 class="section-title" id="kn-title">Umiejętności</h2>
+      </section>
+      <section data-name="Umiejętności" class="section group-2 column align">
+        <div class="box" id="kn-t1">
+          <p class="title">Więcej o mnie</p>
+          <p class="content">
+            Jestem osobą, która przykłada dużą wagę do szczegółów i dbałości o
+            jakość swojego kodu. Wierzę, że to właśnie w trudnych wyzwaniach
+            najbardziej się uczymy, dlatego nie boję się podejmować nowych,
+            wymagających projektów. Fascynuje mnie proces tworzenia
+            interaktywnych interfejsów użytkownika i skutecznego rozwiązywania
+            problemów związanych z programowaniem.
+          </p>
+        </div>
+      </section>
+      <section data-name="Umiejętności" class="section group-2"></section>
+      <section data-name="Umiejętności" class="section group-2 column align">
+        <div class="box" id="kn-t2">
+          <p class="title">Frontend</p>
+          <p class="content">
+            Specjalizuję się w tworzeniu atrakcyjnych i intuicyjnych interfejsów
+            użytkownika, wykorzystując React oraz React Native. Dzięki
+            zaawansowanej znajomości JavaScript, HTML i CSS potrafię projektować
+            responsywne strony i aplikacje, które działają płynnie na różnych
+            urządzeniach. W swojej pracy dbam o szczegóły wizualne i wygodę
+            użytkownika, łącząc nowoczesny design z wydajnością. Stawiam na
+            optymalizację kodu oraz wdrażanie najnowszych technologii, aby
+            finalne rozwiązania były zarówno funkcjonalne, jak i estetyczne.
+          </p>
+        </div>
+      </section>
+      <section data-name="Umiejętności" class="section group-2"></section>
+      <section data-name="Umiejętności" class="section group-2 column align">
+        <div class="box" id="kn-t3">
+          <p class="title">Backend</p>
+          <p class="content">
+            Tworzę stabilne i wydajne aplikacje serwerowe z wykorzystaniem
+            Node.js. Pracuję z bazami danych MySQL, zapewniając sprawne
+            przetwarzanie i przechowywanie informacji. Do testowania i
+            optymalizacji API korzystam z narzędzia Postman, co pozwala mi
+            tworzyć niezawodne i bezpieczne połączenia między frontendem a
+            backendem. Dodatkowo posiadam podstawową znajomość PHP, co pozwala
+            mi na pracę z tradycyjnymi rozwiązaniami backendowymi i integrację z
+            istniejącymi systemami opartymi na tej technologii. Przykładam dużą
+            wagę do spójności całego systemu i solidności na każdym etapie pracy
+            nad aplikacją.
+          </p>
+        </div>
+      </section>
+      <section data-name="Umiejętności" class="section group-2"></section>
+      <section
+        data-name="Umiejętności"
+        class="section group-2 column align gap"
+      >
+        <div class="box" id="kn-t4">
+          <p class="title">Grafika 2D/3D</p>
+          <p class="content">
+            Zajmuję się projektowaniem grafiki oraz modeli 3D, korzystając z
+            narzędzi takich jak Adobe Photoshop, Illustrator, GIMP czy Blender.
+            W moich projektach łączę kreatywność z technicznymi umiejętnościami,
+            tworząc wizualizacje, które przyciągają uwagę i są dopasowane do
+            potrzeb klientów. Potrafię zaprojektować zarówno estetyczne logotypy
+            i ilustracje, jak i zaawansowane modele 3D czy animacje. Praca z
+            grafiką to dla mnie nie tylko obowiązek, ale i pasja, co przekłada
+            się na jakość realizowanych projektów.
+          </p>
+        </div>
+
+        <div class="box" id="kn-t5">
+          <p class="title">Pozostałe umiejętności</p>
+          <p class="content">
+            Posiadam podstawową znajomość Arduino oraz programowania w C++, co
+            pozwala mi tworzyć proste projekty z zakresu elektroniki i
+            automatyki. Potrafię pisać i testować podstawowe programy sterujące
+            mikrokontrolerami, projektować prototypy oraz integrować je z
+            różnymi sensorami i modułami. Dzięki temu mogę realizować niewielkie
+            projekty IoT oraz rozwijać bardziej zaawansowane rozwiązania w tym
+            zakresie.
+          </p>
+        </div>
+      </section>
+      <section data-name="Portfolio" class="section group-3">
+        <h2 class="section-title" id="portfolio-title">Portfolio</h2>
+      </section>
+      <section data-name="Portfolio" class="section group-3 portfolio-section">
+        <div class="portfolio-wrapper">
+          <div class="img-wrapper">
+            <div class="img-h"></div>
+            <img id="img-content" />
+          </div>
+          <div class="portfolio-buttons">
+            <button class="button-1">Projekty</button>
+            <button class="button-1">Klienci</button>
+            <button class="button-1">Graficzne / Rysunki</button>
+          </div>
+          <div class="portfolio-content">
+            <p id="p-title"></p>
+            <p id="p-content"></p>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-info-split" style="gap: 5px">
+              <p id="p-actual"></p>
+              <p>/</p>
+              <p id="p-max"></p>
+            </div>
+            <div class="portfolio-info-split">
+              <div class="progress">
+                <div class="progress-in"></div>
+              </div>
+            </div>
+            <div class="portfolio-info-split">
+              <div class="arrow arr-left">&lt;</div>
+              <button class="button-1" id="visit">Zobacz</button>
+              <div class="arrow arr-right">&gt;</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section data-name="Kontakt" class="section group-4">
+        <h2 class="section-title" id="contact-title">Kontakt</h2>
+      </section>
+      <section data-name="Kontakt" class="section group-4">
+        <div class="contact-wrapper"></div>
+      </section>
+    </div>
+    <script src="./scripts/loading.js" type="module"></script>
+    <script src="./scripts/portfolio.js" type="module"></script>
+    <script src="./scripts/animations.js" type="module"></script>
+    <script src="./scripts/index.js" type="module"></script>
+  </body>
+</html>
